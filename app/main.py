@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 
 from ingredients import load_ingredients
 from api import find_by_ingredients
+from recommender import parse_recipes
 
 
 load_dotenv()
@@ -17,7 +18,8 @@ def main():
 
     
     response = find_by_ingredients(base_url, api_key, num_recipes, ingredients)
-    print(response.json())
+    parse_recipes(response.json())
+
 
 if __name__ == "__main__":
     main()
