@@ -13,5 +13,5 @@ def find_by_ingredients(base_url, api_key, num_recipes, ingredients):
     response = requests.get(endpoint, params=params)
     response.raise_for_status() 
 
-    return response
+    return response.json()
 
